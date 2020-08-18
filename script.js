@@ -3,6 +3,7 @@ var loading = `<div class="spinner-border text-light" role="status">
                     <span class="sr-only">Loading...</span>
                 </div>`
 
+// search button 
 document.getElementById("inputForm").addEventListener('submit', start);
 function start(e) {
     resetField();
@@ -28,13 +29,13 @@ function start(e) {
         })
     e.preventDefault();
 }
-// search button 
 
 // display suggestions  
+
 function displaySuggestion(allData) {
     let data = allData.data;
     console.log(data);
-   
+
     let list = [];
     for (let i = 0; i < 10; i++) {
         const item = {
@@ -49,14 +50,12 @@ function displaySuggestion(allData) {
     }
     console.log(list);
 
-    //  html display suggestion  -------------------------------html display suggestion in "display-result" id
     let display = document.getElementById("display-result");
     display.innerHTML = "";
     document.querySelector('.single-result').style.display = "block";
     for (let i = 0; i < list.length; i++) {
         let { title, albumTitle, albumImage, artistName, artistImage } = list[i];
         
-        // handling ( ' ) comma in variable
         title = title.replace(/'/g, " ");
         artistName = artistName.replace(/'/g, " ");
 
@@ -75,8 +74,9 @@ function displaySuggestion(allData) {
             </div>
             <div class="bottom-line"></div>`
     }
-   
-// get lyrics from suggestions
+}
+
+// get from suggetions
 
 const getLyrics = (title, artistName, albumImage, artistImage) => {
     console.log(title, artistName);
@@ -91,7 +91,6 @@ const getLyrics = (title, artistName, albumImage, artistImage) => {
         .catch(err => console.log(err))
 }
 
-// display lyrics from getLyrics 
 
 const displayLyrics = (data, title, artistName, albumImage, artistImage) => {
     document.querySelector('.single-result').style.display = "none";
@@ -111,7 +110,6 @@ const displayLyrics = (data, title, artistName, albumImage, artistImage) => {
     }
 }
 
-// reset the id fields ------------------------------------------------------------------------------------------------
 const resetField = () => {
     document.getElementById("song-image").innerHTML = "";
     document.getElementById("search-result").innerText = "";

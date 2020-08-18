@@ -13,7 +13,6 @@ body{
     border: none;
     border-radius: 25px;
 }
-
 .btn{
     border-radius: 1.5rem;
     padding: 9px 20px;
@@ -66,7 +65,7 @@ body{
 .img-fluid{
     border: 1px solid rgb(165, 165, 165);
     border-radius: 50%;
-    margin-right: 4px;
+    margin-right: 3px;
 }
 
 @media screen and (max-width: 720px) {
@@ -74,14 +73,14 @@ body{
       display: none;
     }
     .single-result{
-        line-height: 13px;
+        line-height: 14px;
     }
     .bottom-line{
-        margin-top: 9px;
+        margin-top: 10px;
     }
   }
 
 .footer{
-    margin-top: 149px;
+    margin-top: 150px;
     padding: 5px;
 }
